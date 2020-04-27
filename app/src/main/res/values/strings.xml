@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="enter_your_number">Enter your number</string>
+    <string name="log_out">Log Out</string>
+    <string name="message">message</string>
+    <string name="ContactsActivity">Contacts</string>
+    <string name="ProfileActivity">Profile</string>
+    <string name="VerifyPhoneActivity">Verify Phone</string>
+    <string name="HomeScreenActivity">Home</string>
+    <string name="activity_for_showing_contacts">Activity for showing contacts</string>
+    <string name="back">back</string>
+    <string name="wait_for_the_code_i_sent_you">Wait for the code I sent you…</string>
+    <string name="OTPCodeString">I sent you a code, it will be detected automatically but if it is not detected you can put it below manually as well</string>
+    <string name="OTP">Enter Code Here</string>
+    <string name="sign_in">Sign In</string>
+    <string name="chats">Chats</string>
+    <string name="calls">Calls</string>
+    <string name="Continue">Continue</string>
 </resources>

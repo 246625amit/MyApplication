@@ -1,19 +1,32 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    Button logout,clist;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dummy_profile);
+
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),2);
+        viewPager.setAdapter(adapter);
+    }
+
+
+
+    /*Button logout,clist;
     TextView contactList;
     ActionBar actionBar;
     @Override
@@ -22,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         logout=findViewById(R.id.btnLogout);
         clist=findViewById(R.id.messageList);
-        contactList=findViewById(R.id.contactstv);
+        contactList=findViewById(R.id.contactsTV);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,5 +55,5 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+    }*/
 }

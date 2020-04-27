@@ -9,10 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContactsActivity"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".VerifyPhoneActivity" />
-        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".ChatsFragment"
+            android:label="@string/ContactsActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".ProfileActivity"
+            android:label="@string/ProfileActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".VerifyPhoneActivity"
+            android:label="@string/VerifyPhoneActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

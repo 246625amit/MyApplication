@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactsActivity">
+    tools:context=".ChatsFragment">
 
     <TextView
-        android:id="@+id/contactstv"
-        android:text="Activity for showing contacts"
+        android:id="@+id/contactsTV"
+        android:text="@string/activity_for_showing_contacts"
         android:layout_width="274dp"
         android:layout_height="78dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/back"
-        android:text="back"
+        android:text="@string/back"
         android:layout_width="122dp"
         android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"

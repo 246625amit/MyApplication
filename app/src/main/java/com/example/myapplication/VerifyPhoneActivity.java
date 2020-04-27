@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyPhoneActivity extends AppCompatActivity {
@@ -42,7 +43,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         enterOTP = findViewById(R.id.enterOTP);
         signIn = findViewById(R.id.btnSignIn);
 
-        String phonenumber = getIntent().getStringExtra("phonenumber");
+        String phonenumber= getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phonenumber);
 
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +60,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 verifyCode(code);
             }
         });
-
-
-
     }
-
-
 
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
@@ -84,7 +80,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         } else {
-                            Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(VerifyPhoneActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -107,7 +103,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
             verificationId = s;
         }
